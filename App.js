@@ -13,18 +13,24 @@ class App extends React.Component {
 
   update(e){
     this.setState({
-      text: e.target.value
+      text: this.state.text,
+      red: ReactDOM.findDOMNode(this.refs.red.refs.input).value,
+      green: ReactDOM.findDOMNode(this.refs.green.refs.input).value,
+      blue: ReactDOM.findDOMNode(this.refs.blue.refs.input).value
     });
   }
 
   render() {
     return (
       <div>
-        <ChildComponent text={this.state.text} update={this.update} />
-        <ChildComponent text={this.state.text} update={this.update} />
+        <h1>{this.state.text}</h1>
 
-        <ChildComponent text={this.state.text} update={this.update} />
-
+        <ChildComponent ref="red" update={this.update} />
+        {this.state.red}
+        <ChildComponent ref="green" update={this.update} />
+        {this.state.green}
+        <ChildComponent ref="blue" update={this.update} />
+        {this.state.blue}
       </div>
     );
 };

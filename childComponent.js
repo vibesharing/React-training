@@ -5,10 +5,9 @@ class ChildComponent extends React.Component {
 
   render() {
     return (
-      <div>
-        <input onChange={this.props.update} value={this.props.text} />
-        <h1> {this.props.text}</h1>
-      </div>
+        <div>
+          <input onChange={this.props.update} ref="input" type="range" min="0"  max="100" />
+        </div>
     )
   }
 }
