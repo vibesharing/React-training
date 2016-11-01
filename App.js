@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ChildComponent from './childComponent'
 class App extends React.Component {
 
   constructor() {
@@ -7,6 +8,7 @@ class App extends React.Component {
     this.state = {
       text: 'this is the initial state of text'
     };
+    this.update = this.update.bind(this);
   }
 
   update(e){
@@ -18,10 +20,13 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <input onChange={this.update.bind(this)} value={this.state.text} />
-        <h1> {this.state.text}</h1>
+        <ChildComponent text={this.state.text} update={this.update} />
+        <ChildComponent text={this.state.text} update={this.update} />
+
+        <ChildComponent text={this.state.text} update={this.update} />
+
       </div>
-    )
+    );
 };
 }
 
