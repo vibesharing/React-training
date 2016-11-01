@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ChildComponent from './childComponent';
 import NestedComponent from './nestedComponent';
+import Wrapper from './lifecycleComponent';
+
 
 class App extends React.Component {
 
@@ -35,6 +37,8 @@ class App extends React.Component {
         {this.state.blue}
 
         <NestedComponent />
+        <br />
+        <Wrapper />
       </div>
     );
 };
