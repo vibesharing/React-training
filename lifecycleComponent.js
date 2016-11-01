@@ -16,24 +16,32 @@ class LifecycleComponent extends React.Component {
   }
 
   componentWillMount() {
-    console.log('mounting');
+    // console.log('mounting');
+    this.setState({
+      multiplier : 2
+    });
   }
 
   render() {
-    console.log('rendering');
+    // console.log('rendering');
     return (
-        <button onClick={this.update}>{this.state.value}</button>
+        <button onClick={this.update}>{this.state.value * this.state.multiplier}</button>
     )
   }
 
   componentDidMount() {
-    console.log('mounted')
+    // console.log('mounted')
+     console.log(ReactDOM.findDOMNode(this));
+     this.inc = setInterval(this.update, 500)
   }
 
   componentWillUnmount() {
-    console.log('bye!')
+    // console.log('bye!')
+    clearInterval(this.inc);
   }
 }
+
+//================================================================================
 
 class Wrapper extends React.Component {
   constructor(){
