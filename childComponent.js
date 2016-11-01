@@ -13,3 +13,6 @@ class ChildComponent extends React.Component {
 }
 
 module.exports = ChildComponent;
+
+
+// the directive div + ref is used with the .refs.input in the Apps.js on line

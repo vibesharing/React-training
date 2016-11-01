@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ChildComponent from './childComponent'
+import ChildComponent from './childComponent';
+import NestedComponent from './nestedComponent';
+
 class App extends React.Component {
 
   constructor() {
@@ -31,6 +33,8 @@ class App extends React.Component {
         {this.state.green}
         <ChildComponent ref="blue" update={this.update} />
         {this.state.blue}
+
+        <NestedComponent />
       </div>
     );
 };
